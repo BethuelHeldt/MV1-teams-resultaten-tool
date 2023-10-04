@@ -1,0 +1,283 @@
+:root{
+
+}
+
+.opdrachten_container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    max-width: 900px;
+    gap: 15px;
+}
+.naam_module {
+    order: 1;
+    margin: 0;
+    font-weight: 500;
+}
+.pag_titel{/*titel als csv niet geladen is*/
+    order: 1;
+    flex: 0 1 100%;
+}
+.naam_student{
+    order: 2;
+    flex: 0 1 100%;
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin: 0;
+    background: black;
+    color: white;
+    line-height: 2;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.opdrachten_lijst{
+    order: 5;
+    width: 100%;
+}
+.opdrachten_info{
+    order: 3;
+    flex: 1 1 calc(50% - 7.5px);
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+}
+
+.opdrachten_info h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: grey;
+}
+.btns{
+    order: 5;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 1 100%;
+    position: sticky;
+    top: 0;
+}
+.btns .btn{
+    flex: 0 1 calc(100%/8);
+}
+
+.btn{
+    color: white;
+    border: 4px solid white;
+    transition: all .2s ease-out;
+    cursor: pointer;
+    line-height: 2em;
+    background-color: rgb(87 76 78);
+    border-radius: 6px;
+    display: inline-block;
+    padding: 0 .5em;
+    float: left;
+}
+.btn.selected,
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.btn.btn_bo{background-color: var(--kleur_bo);}
+.btn.btn_vrmg{background-color: var(--kleur_vrmg);}
+.btn.btn_rea{background-color: var(--kleur_rea);}
+.btn.btn_dig{background-color: var(--kleur_dig);}
+.btn.btn_flex{background-color: var(--kleur_flex);}
+.btn.btn_avo{background-color: var(--kleur_avo);}
+.btn.btn_slb{background-color: var(--kleur_slb);}
+.btn.btn_alles{
+    background: rgb(29,29,27);
+    background: linear-gradient(90deg, rgba(29,29,27,1) 0%, rgba(232,48,129,1) 17%, rgba(149,26,129,1) 35%, rgba(23,64,120,1) 53%, rgba(232,77,13,1) 69%, rgba(54,169,225,1) 85%, rgba(58,170,53,1) 100%);
+}
+
+.opdracht {
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    margin: 1em 0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    overflow: hidden;
+    border-color: var(--kleur-nog-nakijken);
+    background-color: rgb(241, 241, 241);
+    display: grid;
+    grid-template-columns: 150px auto 100px;
+    grid-template-rows: auto auto auto 100%;
+    grid-template-areas: 
+      "beoordeling opdr-titel unit"
+      "beoordeling deadline unit" 
+      "beoordeling status unit"
+      "beoordeling feedback unit";
+}
+
+.opdracht-item {
+    padding: .3em 15px;
+}
+.unit {
+    grid-area: unit;
+    padding: 10px;
+}
+.deadline {
+    grid-area: deadline;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.naam {
+    grid-area: opdr-titel;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.status {
+    grid-area: status;
+    padding-top: 0;
+    margint-top: 0;
+}
+.beoordeling {
+    grid-area: beoordeling;
+    background-color: var(--kleur-nog-nakijken);
+}
+.feedback {
+    grid-area: feedback;
+}
+
+.dag,
+.tijd {
+    white-space: nowrap;
+}
+
+.dag {
+    color: black;
+}
+
+.tijd {
+    color: grey;
+    padding-left: .5em;
+}
+
+.tijd::after {
+    content: ' uur';
+}
+
+span.opdracht_nr {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background: #574b4e;
+    color: white;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    float: left;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+}
+
+.status::before{content:'Status: ';}
+.deadline::before{content:'Deadline: ';}
+
+/*Beoordeling met kleur ed.*/
+.onvoldoende .beoordeling,
+.voldoende .beoordeling,
+.goed .beoordeling,
+.excellent .beoordeling,
+.niet.ingeleverd .beoordeling,
+.niet_ingeleverd .beoordeling{
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+.opdracht.onvoldoende{border-color: var(--kleur_onvoldoende);}
+.opdracht.voldoende{border-color: var(--kleur_voldoende);}
+.opdracht.goed{border-color: var(--kleur_goed);}
+.opdracht.excellent{border-color: var(--kleur_excellent);}
+.opdracht.niet.ingeleverd{border-color: var(--kleur_niet_ingeleverd);}
+
+.opdracht.onvoldoende .beoordeling{background-color: var(--kleur_onvoldoende);}
+.opdracht.voldoende .beoordeling{background-color: var(--kleur_voldoende);}
+.opdracht.goed .beoordeling{background-color: var(--kleur_goed);}
+.opdracht.excellent .beoordeling{background-color: var(--kleur_excellent);}
+.opdracht.niet.ingeleverd .beoordeling,
+.opdracht.niet_ingeleverd .beoordeling{background-color: var(--kleur_niet_ingeleverd); }
+
+.opdracht.is_beoordeeld .beoordeling::before{
+    content:'beoordeeld als';
+    font-size: 1rem;
+    display: block;
+}
+
+/*FEEDBACK*/
+.fb-toggle{/*menu-toggle checkbox ligt boven alles*/
+    z-index: 99999; 
+    opacity: 0;
+}
+.fb{
+    opacity: 0;/*volledig transparant*/
+    max-height: 0;
+    transition: all .5s ease-in-out;
+    padding-bottom: .5em;
+}
+.fb-toggle:checked ~ .fb{/*menu wordt zichtbaar bij klik op menu-toggler checkbox*/
+    opacity: 100;/*volledig zichtbaar*/
+    max-height: 500px;
+}
+.fb_btn{
+    cursor: pointer;
+    color: rgba(255, 0, 255, 0.8);
+    font-weight: 700;
+}
+.fb_btn:hover{
+    color: magenta;
+    text-decoration: underline;
+}
+
+
+.hide{
+    max-height: 0;
+    transition: all .5s ease-in;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.opdracht-item.status .beoordeeld.excellent{color: var(--kleur_excellent)}
+.opdracht-item.status .beoordeeld.goed{color: var(--kleur_goed)}
+.opdracht-item.status .beoordeeld.voldoende{color: var(--kleur_voldoende)}
+.opdracht-item.status .beoordeeld.onvoldoende{color: var(--kleur_onvoldoende)}
+.opdracht-item.status .beoordeeld.niet.ingeleverd{color: var(--kleur_niet_ingeleverd)}
+
+
+@media print{
+    html,
+    body {
+        font-size: 11px;
+    }
+    .fb{
+        opacity: 1;/*volledig transparant*/
+        max-height: none;
+        overflow: auto;
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .fb::-webkit-scrollbar {
+        display: none;/* Hide scrollbar for Chrome, Safari and Opera */
+    }
+    .formulier,
+    .fb_btn,
+    .btns,
+    .btn{
+        display: none;
+    }
+    .opdracht{
+        page-break-inside : avoid;
+        /*page-break-before: left;
+        break-before:left;*/
+        border: none;
+
+    }
+}

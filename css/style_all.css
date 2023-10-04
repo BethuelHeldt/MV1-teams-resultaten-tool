@@ -1,0 +1,224 @@
+/*css teams tools*/
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+:root{
+    --bg_kleur_excellent: rgba(0, 128, 0, 0.2);
+    --bg_kleur_goed: rgba(22, 150, 22, 0.2);
+    --bg_kleur_voldoende: rgba(64, 176, 64, 0.2);
+    --bg_kleur_onvoldoende: rgba(255, 0, 0, 0.2);
+    --bg_kleur_niet_ingeleverd: rgba(200, 200, 200, 0.2);
+    --bg_kleur-nog-nakijken: rgba(0,0,0,0.2);
+
+    --kleur_dig: #174078;
+    --kleur_rea: #951a81;
+    --kleur_crea: #951a81;
+    --kleur_vrmg: #e83081;
+    --kleur_slb: #3aaa35;
+    --kleur_flex: #36A9E1;
+    --kleur_avo: #e84d0d;
+    --kleur_bo: #1d1d1b;
+
+    --kleur_excellent: green;
+    --kleur_goed: rgb(22, 150, 22);
+    --kleur_voldoende: rgb(64, 176, 64);
+    --kleur_onvoldoende: red;
+    --kleur_niet_ingeleverd: black;
+    --kleur-nog-nakijken: #bdbdbd;
+    --kleur_ongeldig: #3a0a24;
+
+    --box-shadow: 0 0 6px 0px rgb(229, 228, 235);
+}
+
+body,
+body * {
+    box-sizing: border-box;
+}   
+body{
+    margin: 30px;
+}
+html,
+body {
+    font-size: 13px;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.2;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{text-decoration: underline;}
+
+strong{
+    font-weight: 700;
+}
+
+
+/**************************** *navigatie tabs*/
+.nav{
+    position: fixed;
+    right: 30px;
+    top:0;
+}
+.nav .btn{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 0.3em;
+    border: none;
+    box-shadow: 0 1px 2px 0px #cccccc;
+    text-decoration: none;
+}
+.nav .btn:hover,
+.nav .btn.selected{
+    background-color: white;
+    color: black;
+    transform: scale(1);
+    
+}
+.nav .btn:hover:not(.selected){
+    background-color: magenta;
+    transform: scale(1);
+}
+.nav .btn:hover.selected{
+    pointer-events: none;
+}
+.nav .btn.selected{
+    background-color: white;
+}
+
+#opslaan_knop,
+input#fileToUpload{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    border: none;
+}
+.formulier{
+    flex: 1 1 calc(50% - 7.5px);
+    order: 4;
+    padding: 15px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+}
+
+
+.expertise-code{
+    font-size: 1rem;
+    line-height: 2;
+    text-align: center;
+    float: right;
+}    
+.expertise-code.NED,
+.expertise-code.ENG,
+.expertise-code.TAVA,
+.expertise-code.REK,
+.expertise-code.AVO{color: var(--kleur_avo);}
+.expertise-code.FLEX{color: var(--kleur_flex);}
+.expertise-code.VRMG{color: var(--kleur_vrmg);}
+.expertise-code.MGR,
+.expertise-code.UXD,
+.expertise-code.DIG{color: var(--kleur_dig);}
+.expertise-code.WEB,
+.expertise-code.WRP,
+.expertise-code.DTP,
+.expertise-code.REA{color: var(--kleur_rea);}
+.expertise-code.COM,
+.expertise-code.ONP,
+.expertise-code.BO{color: var(--kleur_bo);}
+.expertise-code.SLB{color: var(--kleur_slb);}
+
+.expertise-code::before{
+    content:'';
+    width: 75px;
+    height: 75px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+/*AVO vakken*/
+.expertise-code.NED::before{
+    background-image: url(../images/NED.svg);
+    background-color: var(--kleur_avo);
+    box-shadow: 0 0 1px 0px var(--kleur_avo);
+}
+.expertise-code.ENG::before{
+    background-image: url(../images/ENG.svg);
+    background-color: var(--kleur_avo);
+    box-shadow: 0 0 1px 0px var(--kleur_avo);
+}
+.expertise-code.REK::before{
+    background-image: url(../images/REK.svg);
+    background-color: var(--kleur_avo);
+    box-shadow: 0 0 1px 0px var(--kleur_avo);
+}
+.expertise-code.TAVA::before{
+    background-image: url(../images/TAVA.svg);
+    background-color: var(--kleur_avo);
+    box-shadow: 0 0 1px 0px var(--kleur_avo);
+}
+/*VRMG*/
+.expertise-code.VRMG::before{
+    background-image: url(../images/VRMG.svg);
+    background-color: var(--kleur_vrmg);
+    box-shadow: 0 0 1px 0px var(--kleur_vrmg);
+}
+/*CREA*/
+.expertise-code.DTP::before{
+    background-image: url(../images/DTP.svg);
+    background-color: var(--kleur_rea);
+    box-shadow: 0 0 1px 0px var(--kleur_rea);
+}
+.expertise-code.WEB::before{
+    background-image: url(../images/WEB.svg);
+    background-color: var(--kleur_rea);
+    box-shadow: 0 0 1px 0px var(--kleur_rea);
+}
+.expertise-code.WRP::before{
+    background-image: url(../images/WRP.svg);
+    background-color: var(--kleur_rea);
+    box-shadow: 0 0 1px 0px var(--kleur_rea);
+}
+/*DIG*/
+.expertise-code.MGR::before{
+    background-image: url(../images/MGR.svg);
+    background-color: var(--kleur_dig);
+    box-shadow: 0 0 1px 0px var(--kleur_dig);
+}
+.expertise-code.UXD::before{
+    background-image: url(../images/UXD.svg);
+    background-color: var(--kleur_dig);
+    box-shadow: 0 0 1px 0px var(--kleur_rea);
+}
+/*BO*/
+.expertise-code.ONP::before{
+    background-image: url(../images/ONP.svg);
+    background-color: var(--kleur_bo);
+    box-shadow: 0 0 1px 0px var(--kleur_bo);
+}
+.expertise-code.COM::before{
+    background-image: url(../images/COM.svg);
+    background-color: var(--kleur_bo);
+    box-shadow: 0 0 1px 0px var(--kleur_bo);
+}
+/*SLB*/
+.expertise-code.SLB::before{
+    background-image: url(../images/unit_SLB.svg);
+    background-color: var(--kleur_slb);
+    box-shadow: 0 0 1px 0px var(--kleur_slb);
+}
+/*FLEX*/
+.expertise-code.FLEX::before{
+    background-image: url(../images/unit_FLEX.svg);
+    background-color: var(--kleur_flex);
+    box-shadow: 0 0 1px 0px var(--kleur_flex);
+}
